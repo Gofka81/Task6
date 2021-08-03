@@ -1,6 +1,5 @@
 package com.epam.rd.java.basic.practice6.part1;
 
-import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -14,6 +13,7 @@ public class Part1 {
 				.replace("^",System.lineSeparator()).getBytes(StandardCharsets.UTF_8)));
 		WordContainer.main(null);
 		System.setIn(STD);
+		WordContainer.printSet();
 	}
 
 
