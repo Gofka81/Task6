@@ -9,24 +9,25 @@ public class WordContainer {
 
 	public static void main(String[] args) {
 		WordContainer container = new WordContainer();
-		container.input();
+		container.fill(container.input());
 		container.printSet();
 	}
 
-	public void input(){
+	public String input(){
 		Scanner sc = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();
 		String buffer;
 		while (sc.hasNextLine()) {
 			buffer = sc.nextLine();
 			if(buffer.matches("stop")){
-				fill(sb.toString().replaceAll("stop.*"," ").trim());
 				break;
 			}
 			sb.append(buffer).append(System.lineSeparator());
 		}
 		sc.close();
+		return sb.toString().replaceAll("stop.*"," ").trim();
 	}
+
 
 	public void fill (String content){
 		String[] words = content.split("[ \n\r]");
