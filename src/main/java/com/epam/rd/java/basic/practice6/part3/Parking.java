@@ -11,7 +11,7 @@ public class Parking {
          parkingSlots = new int[capacity];
     }
 
-    public boolean arrive(int k) throws IllegalArgumentException {
+    public boolean arrive(int k){
          if(k < 0 || k > parkingSlots.length-1){
              throw new IllegalArgumentException("The number is less than 0 or bigger than capacity" );
          }
@@ -22,7 +22,7 @@ public class Parking {
          return true;
     }
 
-    public boolean depart(int k) throws IllegalArgumentException {
+    public boolean depart(int k){
          if(k < 0 || k > parkingSlots.length-1){
              throw new IllegalArgumentException("The number is less than 0 or bigger than capacity");
          }
