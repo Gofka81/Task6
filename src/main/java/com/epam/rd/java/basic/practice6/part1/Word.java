@@ -13,12 +13,20 @@ public class Word implements Comparable<Word> {
 
     @Override
     public boolean equals(Object obj) {
-        return this.content.equals(obj);
+	    if(!(obj instanceof Word)){
+	        return false;
+        }
+	    else {
+	        Word word = (Word) obj;
+            return (this.content.equalsIgnoreCase(word.content));
+        }
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int hashCode = 1;
+        hashCode = hashCode * this.content.hashCode();
+        return hashCode;
     }
 
     @Override
