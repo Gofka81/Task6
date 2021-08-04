@@ -1,15 +1,27 @@
 package com.epam.rd.java.basic.practice6.part4;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Range implements Iterable<Integer>{
+
+    private final List<Integer> list = new ArrayList<>();
 
     public Range(int n, int m) {
         this(n, m, false);
     }
 
     public Range(int firstBound, int secBound, boolean reversedOrder) {
-        
+        for(int i =firstBound; i< secBound; i++){
+            if(reversedOrder){
+                list.add(0,i);
+            }
+            else{
+                list.add(i);
+            }
+        }
     }
     
     @Override
@@ -19,14 +31,22 @@ public class Range implements Iterable<Integer>{
     
     private final class IteratorImpl implements Iterator<Integer> {
 
+        private int indexNext;
+        private int lastIndex =-1;
+
         @Override
         public boolean hasNext() {
-            return false;
+            return indexNext!=list.size();
         }
 
         @Override
         public Integer next() {
-            return null;
+            if(indexNext>=list.size()){
+                throw new NoSuchElementException();
+            }
+            lastIndex = indexNext;
+            indexNext++;
+            return list.get(lastIndex);
         }
         
     }

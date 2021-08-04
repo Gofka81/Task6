@@ -36,7 +36,7 @@ public class Parking {
     
     public void print() {
          IntStream stream = Arrays.stream(parkingSlots);
-         stream.forEach(System.out::println);
+         stream.forEach(System.out::print);
     }
 
     private boolean isFreeSlots(){
