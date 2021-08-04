@@ -108,8 +108,6 @@ public class Tree<E extends Comparable<E>>{
 
         print2DUtil(root.left, space);
 
-
-        System.out.print("\n");
         for (int i = 2; i < space; i++)
             System.out.print(" ");
         System.out.print(root.data + "\n");
