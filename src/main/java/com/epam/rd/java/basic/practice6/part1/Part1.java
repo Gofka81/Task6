@@ -13,7 +13,6 @@ public class Part1 {
 				.replace("^",System.lineSeparator()).getBytes(StandardCharsets.UTF_8)));
 		WordContainer.main(null);
 		System.setIn(STD);
-		WordContainer.printSet();
 	}
 
 

@@ -5,13 +5,15 @@ import java.util.stream.Stream;
 
 public class WordContainer {
 
-	private static Set<Word> wordSet = new TreeSet<>();
+	private  Set<Word> wordSet = new TreeSet<>();
 
 	public static void main(String[] args) {
-		input();
+		WordContainer container = new WordContainer();
+		container.input();
+		container.printSet();
 	}
 
-	public static void input(){
+	public void input(){
 		Scanner sc = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();
 		String buffer;
@@ -26,7 +28,7 @@ public class WordContainer {
 		sc.close();
 	}
 
-	public static void fill (String content){
+	public void fill (String content){
 		String[] words = content.split("[ \n\r]");
 		for(String word: words){
 			Stream<String> stream = Arrays.stream(words);
@@ -37,7 +39,7 @@ public class WordContainer {
 		}
 	}
 
-	public static void printSet(){
+	public void printSet(){
 		for(Word word: wordSet){
 			System.out.println(word.getContent() + ": "+ word.getFrequency());
 		}
