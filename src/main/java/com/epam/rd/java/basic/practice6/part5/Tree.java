@@ -104,17 +104,17 @@ public class Tree<E extends Comparable<E>>{
         if (root == null)
             return;
 
-        space += 10;
+        space += 2;
 
-        print2DUtil(root.right, space);
+        print2DUtil(root.left, space);
 
 
         System.out.print("\n");
-        for (int i = 10; i < space; i++)
+        for (int i = 2; i < space; i++)
             System.out.print(" ");
         System.out.print(root.data + "\n");
 
-        print2DUtil(root.left, space);
+        print2DUtil(root.right, space);
     }
 
     private static final class Node<E> {
