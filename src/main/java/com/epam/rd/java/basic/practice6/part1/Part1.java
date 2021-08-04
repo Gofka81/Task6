@@ -10,8 +10,9 @@ public class Part1 {
 		InputStream std = System.in;
 		System.setIn(new ByteArrayInputStream(
 				"asd 43 asdf asd 43^434 asdf^kasdf asdf stop asdf^stop"
-				.replace("^",System.lineSeparator()).getBytes(StandardCharsets.UTF_8)));
+						.replace("^",System.lineSeparator()).getBytes(StandardCharsets.UTF_8)));
 		WordContainer.main(null);
 		System.setIn(std);
+
 	}
 }
