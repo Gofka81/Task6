@@ -32,7 +32,6 @@ public class Range implements Iterable<Integer>{
     private final class IteratorImpl implements Iterator<Integer> {
 
         private int indexNext;
-        private int lastIndex =-1;
 
         @Override
         public boolean hasNext() {
@@ -41,6 +40,7 @@ public class Range implements Iterable<Integer>{
 
         @Override
         public Integer next() {
+            int lastIndex =-1;
             if(indexNext>=list.size()){
                 throw new NoSuchElementException();
             }

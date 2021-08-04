@@ -17,6 +17,11 @@ public class Word implements Comparable<Word> {
     }
 
     @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
     public int compareTo(Word o) {
         if (this.getFrequency() < o.getFrequency())
             return 1;

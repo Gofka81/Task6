@@ -99,7 +99,7 @@ public class Tree<E extends Comparable<E>>{
         print2DUtil(root,0);
     }
 
-    public void print2DUtil(Node root, int space)
+    public void print2DUtil(Node<E> root, int space)
     {
         if (root == null)
             return;
