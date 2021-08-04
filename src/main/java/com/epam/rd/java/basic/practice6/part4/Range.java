@@ -14,7 +14,7 @@ public class Range implements Iterable<Integer>{
     }
 
     public Range(int firstBound, int secBound, boolean reversedOrder) {
-        for(int i =firstBound; i< secBound; i++){
+        for(int i =firstBound; i<= secBound; i++){
             if(reversedOrder){
                 list.add(0,i);
             }
