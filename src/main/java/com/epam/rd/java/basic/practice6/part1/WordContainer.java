@@ -1,7 +1,7 @@
 package com.epam.rd.java.basic.practice6.part1;
 
-import java.io.InputStream;
 import java.util.*;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 public class WordContainer {
@@ -10,23 +10,23 @@ public class WordContainer {
 
 	public static void main(String[] args) {
 		WordContainer container = new WordContainer();
-		container.input();
+		container.fill(container.input());
 		container.printSet();
 	}
 
-	public void input(){
+	public String input(){
 		Scanner sc = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();
 		String buffer;
 		while (sc.hasNextLine()) {
 			buffer = sc.nextLine();
-			if(buffer.matches("stop")){
-				fill(sb.toString().replaceAll("stop.*"," ").trim());
+			sb.append(buffer).append(" ");
+			if(Pattern.compile("(?i)stop").matcher(buffer).find()){
 				break;
 			}
-			sb.append(buffer).append(System.lineSeparator());
 		}
 		sc.close();
+		return sb.toString();
 	}
 
 	public void fill (String content){
