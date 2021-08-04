@@ -39,23 +39,23 @@ public class Parking {
          stream.forEach(System.out::print);
     }
 
-    private boolean isFreeSlots(){
+    public boolean isFreeSlots(){
         IntStream stream = Arrays.stream(parkingSlots);
          return stream.anyMatch(x->x ==0);
     }
 
-    private boolean isFreeHere(int k){
+    public boolean isFreeHere(int k){
         return 0 == getParkStats(k) ;
     }
 
-    private void setParkStats(int k){
+    public void setParkStats(int k){
          parkingSlots[k] = parkingSlots[k] ==0? 1 : 0;
     }
-    private int getParkStats(int k){
+    public int getParkStats(int k){
         return parkingSlots[k];
     }
 
-    private void parking(int k){
+    public void parking(int k){
         for(int i =k; i < parkingSlots.length; i++){
             if(isFreeHere(i)){
                 setParkStats(i);
