@@ -15,7 +15,7 @@ public class Part61{
         wordsSet = new LinkedHashSet<>();
         fill(content);
         Stream<Word> stream = wordsSet.stream();
-        stream.sorted(Comparator.comparing(Word::getFrequency).reversed()).limit(3).sorted(Comparator.comparing(Word::getContent)).forEach(x-> System.out.println(x.getContent() +" ==> "+ x.getFrequency()));
+        stream.sorted(Comparator.comparing(Word::getFrequency).reversed()).limit(3).sorted(Comparator.comparing(Word::getContent).reversed()).forEach(x-> System.out.println(x.getContent() +" ==> "+ x.getFrequency()));
     }
 
     public static void fill (String content){
