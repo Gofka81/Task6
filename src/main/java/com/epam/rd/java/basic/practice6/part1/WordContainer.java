@@ -42,7 +42,7 @@ public class WordContainer {
 
 	public void printSet(){
 		for(Word word: wordSet){
-			System.out.println(word.getContent() + ": "+ word.getFrequency());
+			System.out.println(word.getContent() + " : "+ word.getFrequency());
 		}
 	}
 }
