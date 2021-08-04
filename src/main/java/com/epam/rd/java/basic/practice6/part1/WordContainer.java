@@ -9,10 +9,8 @@ public class WordContainer {
 	private  Set<Word> wordSet = new TreeSet<>();
 
 	public static void main(String[] args) {
-		InputStream std = System.in;
 		WordContainer container = new WordContainer();
 		container.input();
-		System.setIn(std);
 		container.printSet();
 	}
 
