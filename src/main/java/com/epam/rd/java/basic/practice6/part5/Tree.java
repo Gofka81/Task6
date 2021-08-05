@@ -4,7 +4,6 @@ package com.epam.rd.java.basic.practice6.part5;
 public class Tree<E extends Comparable<E>>{
 
     private Node<E> root;
-    private int size = 0;
 
     public boolean add(E element) {
         if(root == null){
@@ -16,7 +15,6 @@ public class Tree<E extends Comparable<E>>{
         }
         Node<E> temp = root;
         Node<E> parent;
-        size++;
         while (true) {
             parent= temp;
             if(temp.data.compareTo(element) >0){
@@ -45,7 +43,6 @@ public class Tree<E extends Comparable<E>>{
     public boolean remove(E element) {
         if(isInTree(root,element) != null) {
             root = findAndDelete(root, element);
-            size--;
             return true;
         }
         return false;
@@ -115,6 +112,17 @@ public class Tree<E extends Comparable<E>>{
         print2DUtil(root.right, space);
     }
 
+    public E getRootData() {
+        return root.data;
+    }
+
+    public void setRoot(Node<E> root) {
+        this.root = root;
+    }
+
+
+
+
     private static final class Node<E> {
         private Node<E> right;
         private Node<E> left;
@@ -123,7 +131,6 @@ public class Tree<E extends Comparable<E>>{
         public Node(E data){
             this.data = data;
         }
-
     }
 
 }
