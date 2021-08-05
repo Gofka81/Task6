@@ -23,7 +23,11 @@ public class Range implements Iterable<Integer>{
             }
         }
     }
-    
+
+    public List<Integer> getList() {
+        return list;
+    }
+
     @Override
     public Iterator<Integer> iterator() {
         return new IteratorImpl();

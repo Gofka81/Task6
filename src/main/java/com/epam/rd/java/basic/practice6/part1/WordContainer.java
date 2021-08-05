@@ -40,6 +40,10 @@ public class WordContainer {
 		}
 	}
 
+	public Set<Word> getWordSet() {
+		return wordSet;
+	}
+
 	public void printSet(){
 		for(Word word: wordSet){
 			System.out.println(word.getContent() + " : "+ word.getFrequency());
